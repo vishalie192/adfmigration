@@ -59,7 +59,10 @@
 				"outputs": [
 					{
 						"referenceName": "DS_COPYSQLTABLE_PARQUET",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Tablename": "@pipeline().parameters.TableName"
+						}
 					}
 				]
 			},
