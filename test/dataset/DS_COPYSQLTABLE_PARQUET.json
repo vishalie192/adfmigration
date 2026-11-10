@@ -1,0 +1,21 @@
+{
+	"name": "DS_COPYSQLTABLE_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_COPYSQLTABLE_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@concat(dataset().Table_Name,'_',formatDateTime(utcNow(),'yyyyMMddHHmmss'),'.parquet')",
+				"folderPath": "@concat(dataset().Table_Name,'/',formatDateTime(utcNow(),'yyyy/MM/dd’))",
+				"fileSystem": "copysqlparquetfile"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
