@@ -1,0 +1,52 @@
+{
+	"name": "PARENT PIPELINE",
+	"properties": {
+		"activities": [
+			{
+				"name": "LOOKUP_SQLTABLE_WATERMARK DW",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT TableSchema, TableName, WatermarkColumn, LastLoadValue FROM dbo.ADF_Watermark_Table;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SQLSERVER",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "FOREACHSQL",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "LOOKUP_SQLTABLE_WATERMARK DW",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('LOOKUP_SQLTABLE_WATERMARK DW').output.value",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
