@@ -1,0 +1,12 @@
+{
+	"name": "DS_COPYSQL_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_COPYSQL_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
