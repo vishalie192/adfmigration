@@ -1,6 +1,55 @@
 {
 	"name": "Child pipeline Incremental",
 	"properties": {
+		"activities": [
+			{
+				"name": "COPYSQL_TABLES",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "@concat(\n    'SELECT MAX(',\n    pipeline().parameters.WatermarkColumn,\n    ') AS MaxValue FROM ',\n    pipeline().parameters.TableSchema,\n    '.',\n    pipeline().parameters.TableName\n)",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_LKUP_MAX_VALUE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "EXEC_UPD_WATERMARK",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "COPYSQL_TABLES",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			}
+		],
 		"parameters": {
 			"TableSchema": {
 				"type": "string",
