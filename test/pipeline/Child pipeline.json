@@ -29,11 +29,11 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"schemaname": {
-								"value": "@pipeline().parameter.Schemaname",
+								"value": "@pipeline().parameters.Schemaname",
 								"type": "Expression"
 							},
 							"tablename": {
-								"value": "@pipeline.parameters.Tablename",
+								"value": "@pipeline().parameters.Tablename",
 								"type": "Expression"
 							}
 						}
