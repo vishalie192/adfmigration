@@ -43,7 +43,25 @@
 					"items": {
 						"value": "@activity('LOOKUP_SQLTABLE_WATERMARK DW').output.value",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "EXEC_SQLPIPELINE",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "Child pipeline Incremental",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
+						}
+					]
 				}
 			}
 		],
