@@ -17,11 +17,15 @@
 				"typeProperties": {
 					"storedProcedureName": "[dbo].[UpdateWatermark]",
 					"storedProcedureParameters": {
-						"Tablename": {
-							"value": {
-								"value": "@pipeline().parameters.Tablename",
-								"type": "Expression"
-							},
+						"TableName": {
+							"type": "String"
+						},
+						"TableSchema": {
+							"value": "",
+							"type": "String"
+						},
+						"WatermarkColumn": {
+							"value": "",
 							"type": "String"
 						}
 					}
