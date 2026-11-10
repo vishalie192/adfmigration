@@ -82,6 +82,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Child Pipeline Stored Procedure",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true
 				}
 			}
