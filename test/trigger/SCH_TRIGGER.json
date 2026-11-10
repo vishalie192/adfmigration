@@ -1,0 +1,24 @@
+{
+	"name": "SCH_TRIGGER",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ADLSCSV TO ADLSPAR WITH SCHTRIGGER",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2026-11-09T10:48:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

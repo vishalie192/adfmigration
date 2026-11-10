@@ -1,0 +1,15 @@
+{
+	"name": "adfdevvkproject1902",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c2b1393f-7f86-4d7e-aadb-39cae84bf91e",
+		"tenantId": "ab354db5-91d3-4d14-81e8-2867dc3e17f6"
+	}
+}

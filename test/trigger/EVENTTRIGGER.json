@@ -1,0 +1,24 @@
+{
+	"name": "EVENTTRIGGER",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ADLSCSV TO ADLSPAR WITH EVENTTRIGGER",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/csveventin/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/ad095012-8ea0-48ef-ac90-cc266bbaf9ca/resourceGroups/rgdevvkproject/providers/Microsoft.Storage/storageAccounts/adlscsvsrc",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
