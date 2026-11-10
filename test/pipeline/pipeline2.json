@@ -1,0 +1,17 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"parameters": {
+			"Tablename": {
+				"type": "string"
+			},
+			"TableSchema": {
+				"type": "string"
+			},
+			"WatermarkColumn": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
