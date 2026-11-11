@@ -55,15 +55,19 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "Child pipeline Incremental",
+									"referenceName": "Child pipeline",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"TableSchema": "@item().TableSchema",
-									"TableName": "@item().TableName",
-									"WatermarkColumn": "@item().WatermarkColumn",
-									"LastLoadValue": "@item().LastloadValue"
+									"TableSchema": {
+										"value": "@item().TableSchema",
+										"type": "Expression"
+									},
+									"TableName": {
+										"value": "@item().TableName",
+										"type": "Expression"
+									}
 								}
 							}
 						}
