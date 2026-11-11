@@ -730,7 +730,7 @@
 							"source": {
 								"type": "SqlServerSource",
 								"sqlReaderQuery": {
-									"value": "SELECT MAX(@{pipeline().parameters.WatermarkColumn}) AS MaxValue\nFROM @{pipeline().parameters.TableSchema}.@{pipeline().parameters.TableName}\n\n",
+									"value": "@concat(\n    'SELECT MAX(',\n    pipeline().parameters.WatermarkColumn,\n    ') AS MaxValue FROM ',\n    pipeline().parameters.TableSchema,\n    '.',\n    pipeline().parameters.TableName\n)\n",
 									"type": "Expression"
 								},
 								"queryTimeout": "02:00:00",
