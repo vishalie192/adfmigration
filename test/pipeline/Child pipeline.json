@@ -133,10 +133,12 @@
 		],
 		"parameters": {
 			"TableSchema": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@item().TableSchema"
 			},
 			"TableName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@item().TableName"
 			}
 		},
 		"annotations": []
