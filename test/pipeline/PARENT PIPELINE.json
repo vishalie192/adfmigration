@@ -17,14 +17,18 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "SELECT TableSchema, TableName, WatermarkColumn, LastLoadValue FROM dbo.ADF_Watermark_Table;",
+						"sqlReaderQuery": {
+							"value": "SELECT TableSchema, TableName, WatermarkColumn, LastLoadValue FROM dbo.ADF_Watermark_Table;",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
 						"referenceName": "DS_SQLSERVER",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -44,6 +48,7 @@
 						"value": "@activity('LOOKUP_SQLTABLE_WATERMARK DW').output.value",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "EXEC_SQLPIPELINE",
@@ -72,7 +77,10 @@
 										"value": "@item().WatermarkColumn",
 										"type": "Expression"
 									},
-									"LastloadValue": "@item().LastLoadValue"
+									"LastloadValue": {
+										"value": "@item().LastLoadValue",
+										"type": "Expression"
+									}
 								}
 							}
 						}
