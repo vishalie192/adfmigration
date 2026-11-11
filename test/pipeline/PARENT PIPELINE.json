@@ -67,7 +67,12 @@
 									"TableName": {
 										"value": "@item().TableName",
 										"type": "Expression"
-									}
+									},
+									"WatermarkColumn": {
+										"value": "@item().WatermarkColumn",
+										"type": "Expression"
+									},
+									"LastloadValue": "@item().LastLoadValue"
 								}
 							}
 						}
