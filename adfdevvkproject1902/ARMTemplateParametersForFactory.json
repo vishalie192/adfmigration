@@ -1,0 +1,156 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdevvkproject1902"
+		},
+		"DS_COPYSQLTABLE_PARQUET_accountKey": {
+			"value": ""
+		},
+		"DS_COPYSQL_SINKPAR_accountKey": {
+			"value": ""
+		},
+		"DS_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"DS_SINK_PARQUETTRIGGER_accountKey": {
+			"value": ""
+		},
+		"DS_SINK_PAR_EVENTTRIGG_accountKey": {
+			"value": ""
+		},
+		"DS_SOURCE_CSVTRIGGER_accountKey": {
+			"value": ""
+		},
+		"DS_SRC_CSV_EVENTTRIG_accountKey": {
+			"value": ""
+		},
+		"DS_SRC_EXCEL_accountKey": {
+			"value": ""
+		},
+		"LS_COPYSQL_SRC_password": {
+			"value": ""
+		},
+		"LS_LKUP_MAX_VALUE_password": {
+			"value": ""
+		},
+		"LS_ONPREM_SQLSERVER_DW_password": {
+			"value": ""
+		},
+		"LS_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_SINK_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SINK_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_SOURCE_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_SOURCE_SQL_password": {
+			"value": ""
+		},
+		"LS_SQLSERVER_password": {
+			"value": ""
+		},
+		"LS_SRC_SQLSERVER_ADLS_password": {
+			"value": ""
+		},
+		"DS_COPYSQLTABLE_PARQUET_properties_typeProperties_url": {
+			"value": "https://aldsparquetsink.dfs.core.windows.net/"
+		},
+		"DS_COPYSQL_SINKPAR_properties_typeProperties_url": {
+			"value": "https://aldsparquetsink.dfs.core.windows.net/"
+		},
+		"DS_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlssink02.dfs.core.windows.net/"
+		},
+		"DS_SINK_PARQUETTRIGGER_properties_typeProperties_url": {
+			"value": "https://aldsparquetsink.dfs.core.windows.net/"
+		},
+		"DS_SINK_PAR_EVENTTRIGG_properties_typeProperties_url": {
+			"value": "https://aldsparquetsink.dfs.core.windows.net/"
+		},
+		"DS_SOURCE_CSVTRIGGER_properties_typeProperties_url": {
+			"value": "https://adlscsvsrc.dfs.core.windows.net/"
+		},
+		"DS_SRC_CSV_EVENTTRIG_properties_typeProperties_url": {
+			"value": "https://adlscsvsrc.dfs.core.windows.net/"
+		},
+		"DS_SRC_EXCEL_properties_typeProperties_url": {
+			"value": "https://adlsdevsrc.dfs.core.windows.net/"
+		},
+		"LS_COPYSQL_SRC_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_COPYSQL_SRC_properties_typeProperties_database": {
+			"value": "SqlMigration"
+		},
+		"LS_COPYSQL_SRC_properties_typeProperties_userName": {
+			"value": "VISIONBOARD"
+		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_database": {
+			"value": "SqlMigration"
+		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_userName": {
+			"value": "VISIONBOARD"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_database": {
+			"value": "SqlMigration"
+		},
+		"LS_ONPREM_SQLSERVER_DW_properties_typeProperties_userName": {
+			"value": "VISIONBOARD"
+		},
+		"LS_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlssink02.dfs.core.windows.net/"
+		},
+		"LS_SINK_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsdevsnk.dfs.core.windows.net/"
+		},
+		"LS_SINK_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlssink02.dfs.core.windows.net/"
+		},
+		"LS_SOURCE_CSV_properties_typeProperties_url": {
+			"value": "https://adlssource2.dfs.core.windows.net/"
+		},
+		"LS_SOURCE_SQL_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_SOURCE_SQL_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"LS_SOURCE_SQL_properties_typeProperties_userName": {
+			"value": "VISIONBOARD"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"value": "SqlMigration"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"value": "VISIONBOARD"
+		},
+		"LS_SRC_SQLSERVER_ADLS_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_SRC_SQLSERVER_ADLS_properties_typeProperties_database": {
+			"value": "VB"
+		},
+		"LS_SRC_SQLSERVER_ADLS_properties_typeProperties_userName": {
+			"value": "VISIONBOARD"
+		},
+		"EVENTTRIGGER_properties_typeProperties_scope": {
+			"value": "/subscriptions/ad095012-8ea0-48ef-ac90-cc266bbaf9ca/resourceGroups/rgdevvkproject/providers/Microsoft.Storage/storageAccounts/adlscsvsrc"
+		}
+	}
+}
