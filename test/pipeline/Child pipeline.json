@@ -115,7 +115,13 @@
 							"outputs": [
 								{
 									"referenceName": "DS_COPYSQL_SINKPAR",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"Table_name": {
+											"value": "@pipeline().parameters.TableName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						},
