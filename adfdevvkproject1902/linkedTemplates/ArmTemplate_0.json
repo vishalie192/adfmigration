@@ -339,8 +339,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2026-11-09T10:48:00",
-						"timeZone": "India Standard Time",
-						"schedule": {}
+						"timeZone": "India Standard Time"
 					}
 				}
 			},
