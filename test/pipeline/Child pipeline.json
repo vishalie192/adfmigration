@@ -139,6 +139,14 @@
 			"TableName": {
 				"type": "string",
 				"defaultValue": "@item().TableName"
+			},
+			"WatermarkColumn": {
+				"type": "string",
+				"defaultValue": "@item().WatermarkColumn"
+			},
+			"LastloadValue": {
+				"type": "string",
+				"defaultValue": "@item().LastLoadValue"
 			}
 		},
 		"annotations": []
